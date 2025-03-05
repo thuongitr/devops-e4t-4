@@ -1,0 +1,26 @@
+name: My very first workflow
+
+on: 
+  push: 
+    branches:
+      - main
+      - development
+  workflow_dispatch:
+  
+jobs:
+
+  OutputToLog:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    
+      - name: checkout
+        uses: actions/checkout@4.2.2
+
+      - name: List all files in the repository
+        run: | 
+          echo "The respository containt the following rules"
+          tree
+
+  
